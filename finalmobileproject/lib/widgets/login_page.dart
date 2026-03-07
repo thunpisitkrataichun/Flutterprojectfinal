@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Homepage.dart';
+import 'home_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -8,7 +9,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final TextEditingController _studentIdController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -24,17 +24,15 @@ class _LoginPageState extends State<LoginPage> {
     String password = _passwordController.text.trim();
 
     if (id.isEmpty || password.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("กรุณากรอกข้อมูลให้ครบ")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("กรุณากรอกข้อมูลให้ครบ")));
       return;
     }
 
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => const Homepage(),
-      ),
+      MaterialPageRoute(builder: (context) => const Homepage()),
     );
   }
 
@@ -121,10 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: const Text(
                     "เข้าสู่ระบบ",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -148,4 +143,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets/Loginpage.dart';
+import 'widgets/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,12 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Class Schedule App',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(primarySwatch: Colors.indigo, useMaterial3: true),
       home: const LoginPage(),
     );
   }
 }
-
