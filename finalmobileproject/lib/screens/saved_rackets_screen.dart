@@ -20,7 +20,7 @@ class SavedRacketsScreen extends StatelessWidget {
           Expanded(
             child: vm.favoriteRackets.isEmpty
                 ? const _EmptyFavorites()
-                : Center(
+                : Container(
                     child: SingleChildScrollView(
                       padding: const EdgeInsets.fromLTRB(16, 20, 16, 120),
                       child: GridView.builder(
